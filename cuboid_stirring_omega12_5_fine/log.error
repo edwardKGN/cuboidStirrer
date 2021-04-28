@@ -1,0 +1,168 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 8-1c9b5879390b
+Exec   : multiphaseEulerFoam
+Date   : Apr 28 2021
+Time   : 12:00:48
+Host   : "edward-VirtualBox"
+PID    : 11624
+I/O    : uncollated
+Case   : /home/edward/OpenFOAM/edward-8/run/cuboidStirrer_standard/cuboid_stirring_omega12_5_fine
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PIMPLE: No convergence criteria found
+
+
+PIMPLE: No corrector convergence criteria found
+        Calculations will do 3 corrections
+
+
+PIMPLE: Operating solver in transient mode with 3 outer correctors
+
+
+
+Reading g
+
+Reading hRef
+Creating phaseSystem
+
+Selecting phaseSystem basicMultiphaseSystem
+Selecting phaseModel for particles: pureIsothermalPhaseModel
+Selecting diameterModel for phase particles: constant
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState rhoConst;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Calculating face flux field phi.particles
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kineticTheory
+Selecting viscosityModel Gidaspow
+Selecting conductivityModel Gidaspow
+Selecting radialModel SinclairJackson
+Selecting granularPressureModel Lun
+Selecting frictionalStressModel JohnsonJacksonSchaeffer
+kineticTheoryCoeffs
+{
+    equilibrium     off;
+    e               0.8;
+    alphaMax        0.07;
+    alphaMinFriction 0.069;
+    residualAlpha   0.0001;
+    viscosityModel  Gidaspow;
+    conductivityModel Gidaspow;
+    granularPressureModel Lun;
+    frictionalStressModel JohnsonJacksonSchaeffer;
+    radialModel     SinclairJackson;
+    JohnsonJacksonSchaefferCoeffs
+    {
+        Fr              0.05;
+        eta             2;
+        p               5;
+        phi             28.5;
+        alphaDeltaMin   0.01;
+    }
+}
+
+Selecting thermophysical transport type RAS
+Selecting default RAS thermophysical transport model eddyDiffusivity
+Selecting phaseModel for water: pureIsothermalPhaseModel
+Selecting diameterModel for phase water: constant
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          eConst;
+    equationOfState rPolynomial;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Calculating face flux field phi.water
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+Selecting thermophysical transport type laminar
+Selecting default laminar thermophysical transport model Fourier
+Creating MRF zone list from MRFProperties
+    creating MRF zone: MRF1
+Selecting default blending method: none
+Selecting surfaceTensionModel for (water and particles): constant
+Selecting dragModel for (particles in water): GidaspowErgunWenYu
+Selecting swarmCorrection for (particles in water): none
+Selecting swarmCorrection for (particles in water): none
+Selecting swarmCorrection for (particles in water): none
+Calculating field g.h
+
+Reading field p_rgh
+
+Courant Number mean: 0 max: 0
+
+Starting time loop
+
+Courant Number mean: 0 max: 0
+deltaT = 0.000239923
+Time = 0.000239923
+
+PIMPLE: Iteration 1
+MULES: Solving for alpha.particles
+particles fraction, min, max = 0.0354406 0 0.07
+MULES: Solving for alpha.particles
+particles fraction, min, max = 0.0354406 0 0.07
+MULES: Solving for alpha.particles
+particles fraction, min, max = 0.0354406 0 0.07
+Constructing momentum equations
+particles min/max T 298 - 298
+water min/max T 298 - 298
+GAMG:  Solving for p_rgh, Initial residual = 0.998915, Final residual = 0.00495821, No Iterations 4
+GAMG:  Solving for p_rgh, Initial residual = 0.0026324, Final residual = 9.9592e-09, No Iterations 319
+PIMPLE: Iteration 2
+MULES: Solving for alpha.particles
+DICPBiCGStab:  Solving for alpha.particles, Initial residual = 0.999823, Final residual = 3.82033e-08, No Iterations 1000
+particles fraction, min, max = 0.0354457 0 0.0700156
+MULES: Solving for alpha.particles
+DICPBiCGStab:  Solving for alpha.particles, Initial residual = 0.99986, Final residual = 7.24628e-08, No Iterations 1000
+particles fraction, min, max = 0.0354603 0 0.0700176
+MULES: Solving for alpha.particles
+DICPBiCGStab:  Solving for alpha.particles, Initial residual = 0.999851, Final residual = 4.9621e-08, No Iterations 1000
+particles fraction, min, max = 0.0354691 -1.77882e-23 0.0700167
+Constructing momentum equations
+particles min/max T 298 - 298
+water min/max T 298 - 298
+GAMG:  Solving for p_rgh, Initial residual = 0.960525, Final residual = 0.00895343, No Iterations 5
+GAMG:  Solving for p_rgh, Initial residual = 0.00454978, Final residual = 9.94563e-09, No Iterations 349
+PIMPLE: Iteration 3
+MULES: Solving for alpha.particles
+DICPBiCGStab:  Solving for alpha.particles, Initial residual = 0.995, Final residual = 9.3314e-10, No Iterations 281
+particles fraction, min, max = 0.0354406 -0.168043 0.0700175 // Error - mass inbalance
+MULES: Solving for alpha.particles
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigFpe::sigHandler(int) at ??:?
+#2  ? in "/lib/x86_64-linux-gnu/libc.so.6"
+#3  Foam::divide(Foam::Field<double>&, Foam::UList<double> const&, Foam::UList<double> const&) at ??:?
+#4  Foam::tmp<Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> > Foam::operator/<Foam::fvPatchField, Foam::volMesh>(Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> const&, Foam::tmp<Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> > const&) at ??:?
+#5  Foam::MomentumTransferPhaseSystem<Foam::phaseSystem>::DByAfs(Foam::PtrList<Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> > const&, Foam::PtrList<Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> > const&) const at ??:?
+#6  Foam::phaseSystem::solve(Foam::PtrList<Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> > const&, Foam::PtrList<Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh> > const&) at ??:?
+#7  ? in "/opt/openfoam8/platforms/linux64GccDPInt32Opt/bin/multiphaseEulerFoam"
+#8  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+

@@ -1,0 +1,7 @@
+gmshToFoam cuboidStirrer_007.msh | tee log.gmshToFoam
+transformPoints -scale '(0.001 0.001 0.001)' | tee log.transformPoints
+checkMesh | tee log.checkMesh
+topoSet | tee log.topoSet
+setFields | tee log.setFields 
+
+touch fluidBed.OpenFOAM
