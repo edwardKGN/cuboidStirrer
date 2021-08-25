@@ -1,0 +1,86 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-fa1285188035
+Exec   : gmshToFoam cuboidStirrerM3_MRF_reg_expansion-nonMRF_reg_05.msh
+Date   : Aug 24 2021
+Time   : 16:06:05
+Host   : "sanctus-VirtualBox"
+PID    : 12383
+I/O    : uncollated
+Case   : /home/sanctus/OpenFOAM/sanctus-6/run/SING_cuboidStirrerM3_stator_05
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Starting to read mesh format at line 2
+Read format version 2.2  ascii 0
+
+Starting to read physical names at line 5
+Physical names:7
+    Surface 7	walls
+    Surface 8	top
+    Surface 9	bot
+    Surface 10	MRF_walls_tgt
+    Surface 11	MRF_top_tgt
+    Surface 12	MRF_bot_tgt
+    Volume 13	nonMRF_reg
+
+Starting to read points at line 15
+Vertices to be read:1057
+Vertices read:1057
+
+Starting to read cells at line 1075
+Cells to be read:5395
+
+Mapping region 7 to Foam patch 0
+Mapping region 8 to Foam patch 1
+Mapping region 9 to Foam patch 2
+Mapping region 10 to Foam patch 3
+Mapping region 11 to Foam patch 4
+Mapping region 12 to Foam patch 5
+Mapping region 13 to Foam cellZone 0
+Cells:
+    total:3543
+    hex  :0
+    prism:0
+    pyr  :0
+    tet  :3543
+
+CellZones:
+Zone	Size
+    0	3543
+
+Skipping tag  at line 6473
+Patch 0 gets name walls
+Patch 1 gets name top
+Patch 2 gets name bot
+Patch 3 gets name MRF_walls_tgt
+Patch 4 gets name MRF_top_tgt
+Patch 5 gets name MRF_bot_tgt
+
+--> FOAM Warning : 
+    From function Foam::polyMesh::polyMesh(const Foam::IOobject&, const Foam::Xfer<Foam::Field<Foam::Vector<double> > >&, const cellShapeList&, const faceListList&, const wordList&, const wordList&, const Foam::word&, const Foam::word&, const wordList&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 595
+    Found 1852 undefined faces in mesh; adding to default patch.
+Finding faces of patch 0
+Finding faces of patch 1
+Finding faces of patch 2
+Finding faces of patch 3
+Finding faces of patch 4
+Finding faces of patch 5
+
+FaceZones:
+Zone	Size
+
+Writing zone 0 to cellZone nonMRF_reg and cellSet
+End
+

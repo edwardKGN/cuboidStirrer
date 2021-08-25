@@ -1,0 +1,117 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    walls
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          1032;
+        startFace       19598;
+    }
+    top
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          144;
+        startFace       20630;
+    }
+    bot
+    {
+        type            wall;
+        //physicalType    patch;
+        nFaces          140;
+        startFace       20774;
+    }
+    MRF_walls_tgt
+    {
+        type            cyclicAMI;
+
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_walls_src;
+
+        //physicalType    patch;
+        nFaces          402;
+        startFace       20914;
+    }
+    MRF_top_tgt
+    {
+        type            cyclicAMI;
+
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_top_src;
+
+        nFaces          67;
+        startFace       21316;
+    }
+    MRF_bot_tgt
+    {
+        type            cyclicAMI;
+
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_bot_src;
+
+        nFaces          67;
+        startFace       21383;
+    }
+    MRF_walls_src
+    {
+        type            cyclicAMI;
+
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_walls_tgt;
+
+        nFaces          1692;
+        startFace       21450;
+    }
+    MRF_top_src
+    {
+        type            cyclicAMI;
+
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_top_tgt;
+
+        nFaces          260;
+        startFace       23142;
+    }
+    MRF_bot_src
+    {
+        type            cyclicAMI;
+
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_bot_tgt;
+
+        nFaces          264;
+        startFace       23402;
+    }
+    impeller
+    {
+        type            wall;
+
+        nFaces          1180;
+        startFace       23666;
+    }
+)
+
+// ************************************************************************* //

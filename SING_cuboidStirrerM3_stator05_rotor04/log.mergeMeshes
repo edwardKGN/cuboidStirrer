@@ -1,0 +1,146 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-fa1285188035
+Exec   : mergeMeshes -overwrite SING_cuboidStirrerM3_stator05_rotor04 SING_cuboidStirrerM3_rotor_04
+Date   : Aug 24 2021
+Time   : 16:09:25
+Host   : "sanctus-VirtualBox"
+PID    : 12765
+I/O    : uncollated
+Case   : /home/sanctus/OpenFOAM/sanctus-6/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Master:      "SING_cuboidStirrerM3_stator05_rotor04"  region region0
+mesh to add: "SING_cuboidStirrerM3_rotor_04"  region region0
+
+Create Times
+Reading master mesh for time = 0
+Create mesh
+
+Reading mesh to add for time = 0
+Create mesh
+
+Writing combined mesh to 0
+patch names: 
+10
+(
+walls
+top
+bot
+MRF_walls_tgt
+MRF_top_tgt
+MRF_bot_tgt
+MRF_walls_src
+MRF_top_src
+MRF_bot_src
+impeller
+)
+
+patch dicts: 
+10
+(
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          1032;
+    startFace       6160;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          144;
+    startFace       7192;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          140;
+    startFace       7336;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          402;
+    startFace       7476;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          67;
+    startFace       7878;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          67;
+    startFace       7945;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          1692;
+    startFace       13438;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          260;
+    startFace       15130;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          264;
+    startFace       15390;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          1180;
+    startFace       15654;
+}
+
+)
+
+point zone names: 0()
+face zone names: 0()
+cell zone names: 
+2
+(
+nonMRF_reg
+MRF_reg
+)
+
+Copying old patches
+Adding new patches. 
+Adding new cellZones. 
+End
+

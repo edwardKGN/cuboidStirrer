@@ -1,0 +1,170 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      phaseProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+type    basicTwoPhaseSystem; // populationBalanceTwoPhaseSystem;
+
+phases (solid water);
+
+populationBalances (particles);
+
+solid
+{
+    type          pureIsothermalPhaseModel;
+    diameterModel constant;
+
+    constantCoeffs
+    {
+        d	  71.6e-6;
+    } 
+
+    /*
+    diameterModel velocityGroup;
+
+    velocityGroupCoeffs
+    {
+	populationBalance	particles;
+	
+	formFactor	1;
+	
+	sizeGroups
+	(
+	     f0{d 61.6e-6; value 0;}
+	     f1{d 62.6e-6; value 0;}
+	     f2{d 63.6e-6; value 0;}
+	     f3{d 64.6e-6; value 0;}
+	     f4{d 65.6e-6; value 0;}
+	     f5{d 66.6e-6; value 0;}
+	     f6{d 67.6e-6; value 0;}
+	     f7{d 68.6e-6; value 0;}
+	     f8{d 69.6e-6; value 0;}
+	     f9{d 70.6e-6; value 0;}
+	     f10{d 71.6e-6; value 1;}
+	);
+    }
+    */
+
+    alphaMax        0.07;
+    residualAlpha   1e-6;
+}
+
+water
+{
+    type          pureIsothermalPhaseModel;
+
+    diameterModel constant;
+    constantCoeffs
+    {
+        d               1;
+    }
+
+    residualAlpha   0;
+}
+
+/*
+populationBalanceCoeffs
+{
+    particles
+    {
+        continuousPhase water;
+
+        coalescenceModels
+        ();
+
+        binaryBreakupModels
+        ();
+
+        breakupModels
+        ();
+
+        driftModels
+        ();
+
+        nucleationModels
+        ();
+    }
+}
+*/
+
+blending
+{
+    default
+    {
+        type            none;
+        continuousPhase water;
+    }
+}
+
+surfaceTension
+(
+    (water and solid)
+    {
+        type            constant;
+        sigma           0.073;
+    }
+);
+
+
+aspectRatio
+(
+);
+
+drag
+(
+    (solid in water)
+    {
+        type            GidaspowErgunWenYu;
+        residualRe      1e-3;
+        swarmCorrection
+        {
+            type        none;
+        }
+    }
+);
+
+virtualMass
+(
+);
+
+heatTransfer
+(
+    (solid in water)
+    {
+        type            RanzMarshall;
+        residualAlpha   1e-4;
+    }
+);
+
+phaseTransfer
+(
+);
+
+lift
+(
+);
+
+wallLubrication
+(
+);
+
+turbulentDispersion
+(
+);
+
+// Minimum allowable pressure
+pMin            10000;
+
+// ************************************************************************* //

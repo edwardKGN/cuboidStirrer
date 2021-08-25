@@ -1,0 +1,129 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+11
+(
+    MRF_interface_src
+    {
+        type            cyclicAMI; // patch;
+        // physicalType    patch;
+	
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_interface_tgt;
+
+        nFaces          2952;
+        startFace       121757;
+    }
+    MRF_interface_midPlane_src
+    {
+        type            cyclicAMI; // patch;
+        // physicalType    patch;
+	
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_interface_midPlane_tgt;
+
+        nFaces          190;
+        startFace       124709;
+    }
+    MRF_interface_bot_src
+    {
+        type            cyclicAMI; // patch;
+        // physicalType    patch;
+	
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_interface_bot_tgt;
+
+        nFaces          258;
+        startFace       124899;
+    }
+    MRF_top
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          110;
+        startFace       125157;
+    }
+    impeller
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          4032;
+        startFace       125267;
+    }
+    walls
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          6216;
+        startFace       129299;
+    }
+    top
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          748;
+        startFace       135515;
+    }
+    bot
+    {
+        type            wall;
+        // physicalType    patch;
+        nFaces          780;
+        startFace       136263;
+    }
+    MRF_interface_tgt
+    {
+        type            cyclicAMI; // patch;
+        // physicalType    patch;
+	
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_interface_src;
+
+        nFaces          2960;
+        startFace       137043;
+    }
+    MRF_interface_midPlane_tgt
+    {
+        type            cyclicAMI; // patch;
+        // physicalType    patch;
+	
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_interface_midPlane_src;
+
+        nFaces          190;
+        startFace       140003;
+    }
+    MRF_interface_bot_tgt
+    {
+        type            cyclicAMI; // patch;
+        // physicalType    patch;
+	
+	matchTolerance  0.0001;
+	transform	noOrdering;
+	neighbourPatch  MRF_interface_bot_src;
+
+        nFaces          258;
+        startFace       140193;
+    }
+)
+
+// ************************************************************************* //

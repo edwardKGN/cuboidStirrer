@@ -1,0 +1,83 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-fa1285188035
+Exec   : checkMesh
+Date   : Aug 24 2021
+Time   : 16:06:05
+Host   : "sanctus-VirtualBox"
+PID    : 12385
+I/O    : uncollated
+Case   : /home/sanctus/OpenFOAM/sanctus-6/run/SING_cuboidStirrerM3_stator_05
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Time = 0
+
+Mesh stats
+    points:           1057
+    faces:            8012
+    internal faces:   6160
+    cells:            3543
+    faces per cell:   4
+    boundary patches: 6
+    point zones:      0
+    face zones:       0
+    cell zones:       1
+
+Overall number of cells of each type:
+    hexahedra:     0
+    prisms:        0
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    3543
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+    Patch               Faces    Points   Surface topology                  
+    walls               1032     542      ok (non-closed singly connected)  
+    top                 144      86       ok (non-closed singly connected)  
+    bot                 140      84       ok (non-closed singly connected)  
+    MRF_walls_tgt       402      218      ok (non-closed singly connected)  
+    MRF_top_tgt         67       43       ok (non-closed singly connected)  
+    MRF_bot_tgt         67       43       ok (non-closed singly connected)  
+
+Checking geometry...
+    Overall domain bounding box (-15 -15 0) (15 15 61)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (-5.16878e-18 -2.6608e-17 -1.8248e-17) OK.
+    Max cell openness = 2.17758e-16 OK.
+    Max aspect ratio = 6.85113 OK.
+    Minimum face area = 2.89545. Maximum face area = 17.4716.  Face area magnitudes OK.
+    Min volume = 2.18652. Max volume = 26.5356.  Total volume = 32296.6.  Cell volumes OK.
+    Mesh non-orthogonality Max: 56.0514 average: 25.1896
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 0.658126 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+
